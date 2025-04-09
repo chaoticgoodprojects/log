@@ -1,7 +1,7 @@
-console.log("✅ server.js file is being run");
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+
 const app = express();
 const PORT = 3000;
 
@@ -18,14 +18,14 @@ app.get('/api/posts', (req, res) => {
   });
 });
 
-// POST new post
+// POST a new post
 app.post('/api/posts', (req, res) => {
   const { title, content } = req.body;
   const newPost = { title, content, timestamp: Date.now() };
 
   fs.readFile(POSTS_FILE, (err, data) => {
     const posts = err ? [] : JSON.parse(data);
-    posts.unshift(newPost); // add to top
+    posts.unshift(newPost);
     fs.writeFile(POSTS_FILE, JSON.stringify(posts, null, 2), (err) => {
       if (err) return res.status(500).send('Failed to save post');
       res.status(201).send('Post created');
@@ -33,6 +33,7 @@ app.post('/api/posts', (req, res) => {
   });
 });
 
+// 🚀 Start the server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
