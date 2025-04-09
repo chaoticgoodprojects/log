@@ -1,3 +1,4 @@
+console.log("✅ server.js file is being run");
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
