@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "title": "yo",
+    "content": "wasup",
+    "timestamp": 1744423601595
+  },
+  {
+    "title": "testing",
+    "content": "whats up adam",
+    "timestamp": 1744180734600
+  }
+]
