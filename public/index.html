@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<div class="background-image" id="backgroundImage"></div>
+
   <!-- Solid fill above the topbar -->
   <div class="top-fill"></div>
 
@@ -40,7 +42,7 @@
   const randomIndex = Math.floor(Math.random() * backgroundImages.length);
   const chosenBackground = backgroundImages[randomIndex];
 
-  document.body.style.backgroundImage = `url('${chosenBackground}')`;
+document.getElementById('backgroundImage').style.backgroundImage = `url('${chosenBackground}')`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center';
   document.body.style.backgroundRepeat = 'no-repeat';
